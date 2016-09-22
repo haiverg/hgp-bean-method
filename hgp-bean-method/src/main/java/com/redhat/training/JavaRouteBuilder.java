@@ -7,7 +7,7 @@ public class JavaRouteBuilder extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		from("file:in?noop=true")
-		.beanRef("taxCalculator")
+		.beanRef("taxCalculator", "processTotalValue")
 		.to("file:out");
 
 	}
